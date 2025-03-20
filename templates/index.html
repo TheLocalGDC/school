@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inschrijving - De HBO School</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: #004080;
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            text-align: left;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #004080;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #003366;
+        }
+        fieldset {
+            border: none; /* Verwijder standaard rand */
+            padding: 0;
+        }
+        legend {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        @media (min-width: 768px) {
+            form {
+                grid-template-columns: 1fr 1fr; /* Twee kolommen voor breedte > 768px */
+            }
+            label {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>De HBO School</h1>
+        </div>
+        <form action="/inschrijven" method="post">
+            <fieldset>
+                <legend>Contactgegevens</legend>
+                <label for="naam">Naam:</label>
+                <input type="text" id="naam" name="naam" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefoon">Telefoon:</label>
+                <input type="text" id="telefoon" name="telefoon" required>
+
+                <label for="adres">Adres:</label>
+                <input type="text" id="adres" name="adres" required>
+
+                <label for="postcode">Postcode:</label>
+                <input type="text" id="postcode" name="postcode" required>
+
+                <label for="woonplaats">Woonplaats:</label>
+                <input type="text" id="woonplaats" name="woonplaats" required>
+
+                <label for="geboortedatum">Geboortedatum:</label>
+                <input type="date" id="geboortedatum" name="geboortedatum" required>
+
+                <label for="geslacht">Geslacht:</label>
+                <select id="geslacht" name="geslacht" required>
+                    <option value="Man">Man</option>
+                    <option value="Vrouw">Vrouw</option>
+                    <option value="Anders">Anders</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Studiegroep</legend>
+                <label for="opleiding">Opleiding:</label>
+                <select id="opleiding" name="opleiding" required>
+                    <option value="HBO Elektrotechniek">HBO Elektrotechniek</option>
+                    <option value="HBO Informatica">HBO Informatica</option>
+                    <option value="HBO Werktuigbouwkunde">HBO Werktuigbouwkunde</option>
+                </select>
+            </fieldset>
+
+            <button type="submit">Inschrijven</button>
+        </form>
+    </div>
+</body>
+</html>
