@@ -8,22 +8,36 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
-            text-align: center;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: #004080;
+            color: white;
+            border-radius: 8px 8px 0 0;
         }
         .container {
             max-width: 600px;
-            margin: 50px auto;
             background: white;
             padding: 30px;
             box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            border-radius: 8px;
+            border-radius: 16px; /* Rounded corners */
             text-align: center;
             margin-top: 50px;
         }
         h1 {
             color: #004080;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
             margin-bottom: 20px;
         }
         .btn {
@@ -33,7 +47,7 @@
             border: none;
             cursor: pointer;
             font-size: 18px;
-            border-radius: 5px;
+            border-radius: 10px; /* Rounded corners */
             text-decoration: none;
             display: inline-block;
             margin-top: 20px;
@@ -44,6 +58,10 @@
     </style>
 </head>
 <body>
+    <div class="header">
+        <img src="https://example.com/logo.png" alt="De HBO School Logo" class="logo"> <!-- Vervang de URL met de juiste logo -->
+        <h1>De HBO School</h1>
+    </div>
     <div class="container">
         <h1>Bedankt voor je aanmelding!</h1>
         <p>Je inschrijving is ontvangen. Controleer je e-mail voor de bevestiging.</p>
