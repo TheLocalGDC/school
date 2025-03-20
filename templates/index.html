@@ -22,12 +22,17 @@
             color: white;
             border-radius: 8px 8px 0 0;
         }
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
         .container {
             max-width: 600px;
             background: white;
             padding: 30px;
             box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            border-radius: 8px;
+            border-radius: 16px;
             text-align: left;
         }
         form {
@@ -54,13 +59,14 @@
             cursor: pointer;
             font-size: 18px;
             width: 100%;
-            border-radius: 5px;
+            border-radius: 10px;
+            transition: background 0.3s ease;
         }
         button:hover {
             background: #003366;
         }
         fieldset {
-            border: none; /* Verwijder standaard rand */
+            border: none; /*Verwijder standaard rand 
             padding: 0;
         }
         legend {
@@ -79,10 +85,12 @@
     </style>
 </head>
 <body>
+    <div class="header">
+        <img src="https://example.com/logo.png" alt="De HBO School Logo" class="logo"> <!-- Vervang de URL met de juiste logo -->
+        <h1>De HBO School</h1>
+    </div>
     <div class="container">
-        <div class="header">
-            <h1>De HBO School</h1>
-        </div>
+        <h2>Inschrijving HBO Elektrotechniek</h2>
         <form action="/inschrijven" method="post">
             <fieldset>
                 <legend>Contactgegevens</legend>
