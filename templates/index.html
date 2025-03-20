@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inschrijving - De HBO School</title>
+    <title>Inschrijving - Windesheim</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Verticale opstelling */
             align-items: center;
             min-height: 100vh;
         }
@@ -21,6 +21,7 @@
             background: #004080;
             color: white;
             border-radius: 8px 8px 0 0;
+            margin-bottom: 30px; /* Ruimte tussen header en container */
         }
         .logo {
             width: 200px; /* Aangepaste breedte */
@@ -85,10 +86,13 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
     <div class="header">
         <img src="https://www.shirt-discounter.nl/wp-content/uploads/2019/09/windesheim-logo-1024x249.png" alt="Windesheim Logo" class="logo">
-        <h1>De HBO School</h1>
+        <h1>Windesheim</h1>
     </div>
+
+    <!-- Container met formulier -->
     <div class="container">
         <h2>Inschrijving HBO Elektrotechniek</h2>
         <form action="/inschrijven" method="post">
