@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inschrijving - De HBO School</title>
-    <!-- Updated CSS path -->
     <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
@@ -18,7 +17,8 @@
     <div class="container">
         <h2>Inschrijving HBO Elektrotechniek</h2>
 
-        <form id="step-1-form" action="/inschrijven" method="post">
+        <!-- Step 1 - Contact Information -->
+        <form id="step-1">
             <fieldset>
                 <legend>Contactgegevens</legend>
                 <div class="form-group">
@@ -46,15 +46,48 @@
                 <button type="button" id="next-btn" class="submit-btn">Volgende</button>
             </div>
         </form>
+
+        <!-- Step 2 - Additional Questions (Hidden by default) -->
+        <form id="step-2" style="display: none;">
+            <fieldset>
+                <legend>Extra informatie</legend>
+                <div class="form-group">
+                    <label for="opleiding">Voorkeursopleiding:</label>
+                    <select id="opleiding" name="opleiding" required>
+                        <option value="">-- Selecteer --</option>
+                        <option value="elektro">Elektrotechniek</option>
+                        <option value="informatica">Informatica</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="niveau">Huidig opleidingsniveau:</label>
+                    <input type="text" id="niveau" name="niveau" required>
+                </div>
+            </fieldset>
+
+            <div class="button-container">
+                <button type="button" id="back-btn" class="submit-btn">Terug</button>
+                <button type="submit" class="submit-btn">Verzenden</button>
+            </div>
+        </form>
     </div>
 
     <script>
         document.getElementById('next-btn').addEventListener('click', function() {
-            // Make sure these elements exist in your HTML
-            if (document.getElementById('step-1') && document.getElementById('step-2')) {
+            // Validate form first
+            const form = document.getElementById('step-1');
+            if (form.checkValidity()) {
                 document.getElementById('step-1').style.display = 'none';
                 document.getElementById('step-2').style.display = 'block';
+            } else {
+                form.reportValidity();
             }
+        });
+
+        document.getElementById('back-btn').addEventListener('click', function() {
+            document.getElementById('step-2').style.display = 'none';
+            document.getElementById('step-1').style.display = 'block';
         });
     </script>
 </body>
