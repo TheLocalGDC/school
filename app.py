@@ -1,25 +1,14 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def home():
-    return render_template("index.html")
+    return render_template('index.html')
 
-@app.route("/inschrijven", methods=["POST"])
-def inschrijven():
-    naam = request.form["naam"]
-    email = request.form["email"]
-    opleiding = request.form["opleiding"]
-    
-    # Hier kun je de gegevens opslaan in een database of naar een e-mail verzenden
-    print(f"Naam: {naam}, Email: {email}, Opleiding: {opleiding}")
-    
-    return redirect(url_for("bedankt"))
+@app.route('/bedankt')
+def thank_you():
+    return render_template('bedankt.html')
 
-@app.route("/bedankt")
-def bedankt():
-    return render_template("bedankt.html")
-
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+    app.run()
