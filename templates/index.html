@@ -4,147 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inschrijving - De HBO School</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column; /* Verticale opstelling */
-            align-items: center;
-            min-height: 100vh;
-        }
-        .header {
-            text-align: center;
-            padding: 20px;
-            background: #004080;
-            color: white;
-            border-radius: 8px 8px 0 0;
-            margin-bottom: 30px; /* Ruimte tussen header en container */
-        }
-        .logo {
-            width: 200px; /* Aangepaste breedte */
-            height: auto; /* Automatische hoogte om aspectverhouding te behouden */
-            margin-bottom: 20px;
-        }
-        .container {
-            max-width: 600px;
-            background: white;
-            padding: 30px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            border-radius: 16px; /* Rounded corners */
-            text-align: left;
-        }
-        form {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
-        label {
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        button {
-            background: #004080;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            width: 100%;
-            border-radius: 10px; /* Rounded corners */
-            transition: background 0.3s ease;
-        }
-        button:hover {
-            background: #003366;
-        }
-        fieldset {
-            border: none; /* Verwijder standaard rand */
-            padding: 0;
-        }
-        legend {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 16px;
-        }
-        @media (min-width: 768px) {
-            form {
-                grid-template-columns: 1fr 1fr; /* Twee kolommen voor breedte > 768px */
-            }
-            label {
-                text-align: left;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
+    <header class="header">
         <img src="https://www.shirt-discounter.nl/wp-content/uploads/2019/09/windesheim-logo-1024x249.png" alt="Windesheim Logo" class="logo">
         <h1>De HBO School</h1>
-    </div>
+    </header>
 
-    <!-- Container met formulier -->
     <div class="container">
         <h2>Inschrijving HBO Elektrotechniek</h2>
-        <form action="/inschrijven" method="post">
+
+        <form id="step-1-form" action="/inschrijven" method="post">
             <fieldset>
                 <legend>Contactgegevens</legend>
-                <label for="naam">Naam:</label>
-                <input type="text" id="naam" name="naam" required>
+                <div class="form-group">
+                    <label for="naam">Naam:</label>
+                    <input type="text" id="naam" name="naam" required>
+                </div>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+                <div class="form-group">
+                    <label for="geboortedatum">Geboortedatum:</label>
+                    <input type="date" id="geboortedatum" name="geboortedatum" required>
+                </div>
 
-                <label for="telefoon">Telefoon:</label>
-                <input type="text" id="telefoon" name="telefoon" required>
+                <div class="form-group">
+                    <label for="telefoon">Telefoon:</label>
+                    <input type="tel" id="telefoon" name="telefoon" required>
+                </div>
 
-                <label for="adres">Adres:</label>
-                <input type="text" id="adres" name="adres" required>
-
-                <label for="postcode">Postcode:</label>
-                <input type="text" id="postcode" name="postcode" required>
-
-                <label for="woonplaats">Woonplaats:</label>
-                <input type="text" id="woonplaats" name="woonplaats" required>
-
-                <label for="geboortedatum">Geboortedatum:</label>
-                <input type="date" id="geboortedatum" name="geboortedatum" required>
-
-                <label for="geslacht">Geslacht:</label>
-                <select id="geslacht" name="geslacht" required>
-                    <option value="Man">Man</option>
-                    <option value="Vrouw">Vrouw</option>
-                    <option value="Anders">Anders</option>
-                </select>
-
-                <label for="school">Welke school zit je nu?</label>
-                <input type="text" id="school" name="school" required>
-
-                <label for="niveau_leerjaar">Welk niveau en leerjaar?</label>
-                <input type="text" id="niveau_leerjaar" name="niveau_leerjaar" required>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
             </fieldset>
 
-            <fieldset>
-                <legend>Studiegroep</legend>
-                <label for="opleiding">Opleiding:</label>
-                <select id="opleiding" name="opleiding" required>
-                    <option value="HBO Elektrotechniek">HBO Elektrotechniek</option>
-                    <option value="HBO Informatica">HBO Informatica</option>
-                    <option value="HBO Werktuigbouwkunde">HBO Werktuigbouwkunde</option>
-                </select>
-            </fieldset>
-
-            <button type="submit">Inschrijven</button>
+            <div class="button-container">
+                <button type="button" id="next-btn" class="submit-btn">Volgende</button>
+            </div>
         </form>
     </div>
+
+    <script>
+        document.getElementById('next-btn').addEventListener('click', function() {
+            document.getElementById('step-1').style.display = 'none';
+            document.getElementById('step-2').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
