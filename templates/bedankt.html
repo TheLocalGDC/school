@@ -11,61 +11,72 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             min-height: 100vh;
         }
         .header {
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
             background: #004080;
             color: white;
-            border-radius: 8px 8px 0 0;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .container {
             max-width: 600px;
             background: white;
-            padding: 30px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            border-radius: 16px; /* Rounded corners */
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
             text-align: center;
-            margin-top: 50px;
+            margin: 30px 20px;
         }
         h1 {
             color: #004080;
             margin-bottom: 20px;
+            font-size: 2rem;
         }
         .logo {
-            width: 100px;
+            width: 300px;
             height: auto;
             margin-bottom: 20px;
+            max-width: 100%;
         }
         .btn {
             background: #004080;
             color: white;
-            padding: 12px 20px;
+            padding: 12px 30px;
             border: none;
             cursor: pointer;
-            font-size: 18px;
-            border-radius: 10px; /* Rounded corners */
+            font-size: 1.1rem;
+            border-radius: 6px;
             text-decoration: none;
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 30px;
+            transition: background-color 0.3s;
         }
         .btn:hover {
             background: #003366;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <img src="https://example.com/logo.png" alt="De HBO School Logo" class="logo"> <!-- Vervang de URL met de juiste logo -->
+        <img src="https://www.shirt-discounter.nl/wp-content/uploads/2019/09/windesheim-logo-1024x249.png" alt="De HBO School Logo" class="logo">
         <h1>De HBO School</h1>
     </div>
     <div class="container">
         <h1>Bedankt voor je aanmelding!</h1>
-        <p>Je inschrijving is ontvangen. Controleer je e-mail voor de bevestiging.</p>
-        <a href="/" class="btn">Terug naar Home</a>
+        <p>Je inschrijving is ontvangen. Controleer je e-mail voor de bevestiging. Na je intake gesprek zouden we wat meer informatie nodig hebben 
+            maar dat komt later! Fijne dag nog!
+        </p>
+        <a href="https://www.windesheim.nl/" class="btn">Terug naar Home</a>
     </div>
 </body>
 </html>
