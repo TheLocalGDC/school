@@ -5,19 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inschrijving - De HBO School</title>
     <link rel="stylesheet" href="static/styles.css">
+    <style>
+        #step-2 {
+            display: none;
+        }
+        .button-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .submit-btn {
+            flex: 1;
+            padding: 12px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <img src="https://www.shirt-discounter.nl/wp-content/uploads/2019/09/windesheim-logo-1024x249.png" alt="Windesheim Logo" class="logo">
         <h1>De HBO School</h1>
     </header>
 
-    <!-- Main Container -->
     <div class="container">
         <h2>Inschrijving HBO Elektrotechniek</h2>
 
-        <!-- Step 1 - Contact Information -->
         <form id="step-1">
             <fieldset>
                 <legend>Contactgegevens</legend>
@@ -47,8 +58,7 @@
             </div>
         </form>
 
-        <!-- Step 2 - Additional Questions (Hidden by default) -->
-        <form id="step-2" style="display: none;">
+        <form id="step-2" action="bedankt.html" method="get">
             <fieldset>
                 <legend>Extra informatie</legend>
                 <div class="form-group">
@@ -75,7 +85,6 @@
 
     <script>
         document.getElementById('next-btn').addEventListener('click', function() {
-            // Validate form first
             const form = document.getElementById('step-1');
             if (form.checkValidity()) {
                 document.getElementById('step-1').style.display = 'none';
