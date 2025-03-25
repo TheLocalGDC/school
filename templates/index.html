@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inschrijving - De HBO School</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Updated CSS path -->
+    <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
     <!-- Header -->
@@ -49,8 +50,11 @@
 
     <script>
         document.getElementById('next-btn').addEventListener('click', function() {
-            document.getElementById('step-1').style.display = 'none';
-            document.getElementById('step-2').style.display = 'block';
+            // Make sure these elements exist in your HTML
+            if (document.getElementById('step-1') && document.getElementById('step-2')) {
+                document.getElementById('step-1').style.display = 'none';
+                document.getElementById('step-2').style.display = 'block';
+            }
         });
     </script>
 </body>
